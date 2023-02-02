@@ -1,14 +1,14 @@
-const userData = require('../data/userData');
+import userData, { push } from '../data/userData';
 
 
 const getUsers = (req, res) => {
     res.status(200).send(userData);
 };
 const postUser = (req, res) => {
-    userData.push(req.body);
+    push(req.body);
     res.status(200).send(userData);
 };
-module.exports = {
+export default {
     getUsers,
     postUser
 };
